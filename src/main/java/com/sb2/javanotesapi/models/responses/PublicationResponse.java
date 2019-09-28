@@ -6,27 +6,29 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "publication")
 public class PublicationResponse {
     @Id
-    public String id;
-    public String content;
-    public String dateCreate;
+    private String id;
+    private String content;
+    private String dateCreate;
 
-    public PublicationResponse(){}
-//    public PublicationResponse(String content, String date){
-//        this.content = content;
-//        this.dateCreate = date;
-//    }
+    public String getId() {
+        return id;
+    }
 
-//    public String getContent() { return content; }
-//
-//    public void setContent(String content) {
-//        this.content = content;
-//    }
-//
-//    public String getDateCreate() {
-//        return dateCreate;
-//    }
-//
-//    public void setDateCreate(String dateCreate) {
-//        this.dateCreate = dateCreate;
-//    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getContent() { return content; }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getDateCreate() {
+        return dateCreate;
+    }
+
+    public void setDateCreate(String dateCreate) {
+        this.dateCreate = dateCreate;
+    }
 }
