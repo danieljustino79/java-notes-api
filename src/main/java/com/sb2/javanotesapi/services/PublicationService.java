@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PublicationService {
@@ -16,6 +17,10 @@ public class PublicationService {
 
     public List<PublicationResponse> getAll(){
         return rep.findAll();
+    }
+
+    public Optional<PublicationResponse> getById(String id){
+        return rep.findById(id);
     }
 
     public  PublicationResponse save(PublicationRequestPost publication){
@@ -29,5 +34,9 @@ public class PublicationService {
         resp.setContent(obj.getContent());
         resp.setDateCreate(obj.getDateCreate());
         return resp;
+    }
+
+    public void delete(String id){
+        rep.deleteById(id);
     }
 }
