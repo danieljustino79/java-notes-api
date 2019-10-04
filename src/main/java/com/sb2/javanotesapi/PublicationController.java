@@ -15,6 +15,7 @@ public class PublicationController {
     @Autowired
     PublicationService service;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public List<PublicationResponse> get(){
         List<PublicationResponse> list = service.getAll();
@@ -36,4 +37,6 @@ public class PublicationController {
     public void delete(@PathVariable String id){
         service.delete(id);
     }
+
+    //https://spring.io/guides/gs/rest-service-cors/
 }
